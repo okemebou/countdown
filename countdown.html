@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Balloon Countdown</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #f0f8ff;
+      padding: 50px;
+    }
+    #countdown {
+      font-size: 2em;
+      margin-top: 20px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Next Balloon Launch</h1>
+  <div id="countdown">Loading countdown...</div>
+
+  <!-- Load countdown.js from Google Drive -->
+  <script src="https://drive.google.com/uc?export=download&id=1XW_J7HtX4GK_fiRnV0N-RcKhGd18m09r"></script>
+  <script>
+    var targetDate = new Date("March 21, 2026 06:45:00 GMT+13:00");
+    countdown(
+      targetDate,
+      function(ts) {
+        document.getElementById("countdown").innerHTML = ts.toHTML("span");
+      },
+      countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS
+    );
+  </script>
+
+</body>
+</html>
